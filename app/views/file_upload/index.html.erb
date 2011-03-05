@@ -14,7 +14,7 @@
 	
 	window.onload = function() {
 		var settings = {
-			flash_url : "/swfupload/Flash8/swfupload_f8.swf",
+			flash_url : "/swfupload/Flash/swfupload.swf",
 			upload_url: "/files/upload",
 			file_size_limit : "500 MB",
 			file_types : "*.*",
@@ -27,6 +27,12 @@
 			},
 			debug: false,
 
+			//Button settings 
+			button_width: "61",
+			button_height: "22",
+			button_placeholder_id: "SF_upload",
+			button_image_url : "/swfupload/XPButtonUploadText_61x22.png",
+			
 			file_queued_handler : fileQueued,
 			file_dialog_start_handler: fileDialogStart,
 			file_dialog_complete_handler : fileDialogComplete,
@@ -237,7 +243,8 @@ text-decoration:underline;
 		</div>
 		<div class="upload-message"><span id="files_completed">0</span> Files Uploaded</div>
 		<div class="buttons" style="margin-left:20px;">
-			<input type="button" value="Browse" onclick="uploader.selectFiles()" class="button" />
+			<div>
+			<input type="button" value="Browse" onclick="uploader.selectFiles()" class="button" id="SF_upload" /></div><br/>
 			<input id="cancel_upload" type="button" value="Cancel All Uploads" onclick="uploader.cancelQueue();" disabled="disabled" class="button" />
 		</div>
 </div>

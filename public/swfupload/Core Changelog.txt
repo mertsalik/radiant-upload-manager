@@ -1,4 +1,48 @@
- * SWFUpload Core, May 2008, www.swfupload.org, swfupload.googlecode.com
+ * SWFUpload Core, January 2009, www.swfupload.org, swfupload.googlecode.com
+
+ * --------- Version 2.2.0.1-----------
+ * - Removed requeueUpload due to bugs/poor testing
+ * = Fixed namespace conflict that broke stopUpload
+ 
+ * --------- Version 2.2.0-----------
+ * + Added button_placeholder setting that accepts a DOM element.
+ * + Added ability to requeue any file (including some improvement to internal queue state tracking)
+ * + UploadErrors caused by a missing upload_url now causes the file to be requeued automatically
+ * + Added preserve_relative_urls setting
+ * + SWFUpload now converts relative URLs to absolute URLs to avoid issues with Flash Player interpreting it differently on some clients
+ * + Added assume_success_timeout setting which allows uploadSuccess to be called after a timeout if, for some reason Flash ignores the server's response
+ *   An additional parameter has been added to the uploadSuccess event to indicate whether a response was received or success was assumed.
+ 
+ * --------- Version 2.2.0 Beta 2 ~ 5-----------
+ * = Fixed a Queue Limit bug
+ * + Improved internal event handling code so uploadSuccess fires even when not content is returned from the server (*woot*, except for Macs)
+ * = Fixed issues in Destroy
+ * = Fixed issues with Queue Plugin
+ * + Added periodic checks of the ExternalInterface
+ * + Improved IE memory leak prevention code
+ * + Added Speed Plugin
+ * = Updated Queue Plugin for better multi-plugin compatibility
+
+ * --------- Version 2.2.0 Beta 1-----------
+ * + Added Flash Player 10 Support
+ *   = Added setting for defining a button image
+ *   = Added setting for defining button text
+ *   = Added setting for defining button width, height and padding
+ *   = Added setting for defining what element the Flash Movie should replace
+ *   = Added setting for defining flash wmode
+ *   = Added setting for defining the mouse cursor
+ * + Added prevent_swf_caching setting as a work-around for issues in Avant Browser (and other IE based browser)
+ * + Added setting for accepting HTTP Status codes other than 200 as successful
+ * + Added parameter to cancelUpload that allows the uploadError event for cancelled uploads to be supressed
+ * + Added pro-active memory leak fix for IE and fixed problems with the destroy function (credits to steffen for patches and testing)
+ * + Replaced callFlash with CallFunction (using the internal function that Flash uses). Based on code from MooTools.
+ * = Fixed bug in the Queue plugin that breaks startUpload when passing a file id.
+ * + Updated Queue plugin to stop the queue if false is returned from the uploadStart handler.
+ * = Fixed small issues in SWFObject plugin
+ * = Fixed issue with ExternalInterface string escaping
+ * - Dropped Graceful Degradation Plugin
+ * - Dropped v1.0.2 Plugin
+ * - Dropped Flash Player 8 support
 
  * --------- Version 2.1.0 -----------
  * = Fixed GET values so they are escaped properly
