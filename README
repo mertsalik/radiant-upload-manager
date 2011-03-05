@@ -12,3 +12,11 @@ After installing the extension to you Radiant project:
 - You'll find an extra "Upload Manager" tab in the admin interface. Files that admin upload go under /public/uploads/File
 
 ===========================================================================
+
+Flash version updated to 10.
+e-haitam's RadiantUploadManager use old Flash version so it doesn't working.
+
+This version is managed and controlled under Ubuntu and Windows x64 machines, 
+so if you encounter any problem you can contact me from 
+ >> mertsalik.itu@gmail.com
+
